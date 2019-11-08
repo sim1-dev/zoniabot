@@ -14,9 +14,9 @@
 class mysql_db {
     
   // mysql server configuration
-  private $dbhost = '127.0.0.1';
-  private $dbuser = 'root';
-  private $dbpass = '';
+  private $dbhost = 'sql.web-developing.it';
+  private $dbuser = 'webdevel38223';
+  private $dbpass = 'webd83291';
   private $dbname = 'spazio';
   protected $mysql;
 
