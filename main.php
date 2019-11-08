@@ -3,12 +3,6 @@
 require_once("utente.php");
 require_once("pianeta.php");
 
-function sendMessage($response) {
-    $parameters = array('chat_id' => $chatId, "text" => $response);
-    $parameters["method"] = "sendMessage";
-    echo json_encode($parameters);
-}
-
 $content = file_get_contents("php://input");
 $update = json_decode($content, true);
 if(!$update)
@@ -22,6 +16,15 @@ $username = isset($message['chat']['username']) ? $message['chat']['username'] :
 $text = isset($message['text']) ? $message['text'] : "";
 $text = trim($text);
 $text = strtolower($text);
+
+function sendMessage($response) {
+    global $chatId;
+    $parameters = array('chat_id' => $chatId, "text" => $response);
+    $parameters["method"] = "sendMessage";
+    echo json_encode($parameters);
+}
+
+
 header("Content-Type: application/json");
 $response = '';
 
