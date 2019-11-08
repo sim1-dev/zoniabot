@@ -3,10 +3,11 @@
 require_once("utente.php");
 require_once("pianeta.php");
 
-echo "prova";
-
 $content = file_get_contents("php://input");
+print_r($content);
+echo "---------------";
 $update = json_decode($content, true);
+print_r($update);
 if(!$update)
 {
   exit;
@@ -28,7 +29,6 @@ function sendMessage($response) {
 
 
 header("Content-Type: application/json");
-echo "prova2";
 $response = '';
 
 if(strpos($text, "/start") === 0)
