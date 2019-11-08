@@ -3,6 +3,8 @@
 require_once("utente.php");
 require_once("pianeta.php");
 
+echo "prova";
+
 $content = file_get_contents("php://input");
 $update = json_decode($content, true);
 if(!$update)
@@ -26,6 +28,7 @@ function sendMessage($response) {
 
 
 header("Content-Type: application/json");
+echo "prova2";
 $response = '';
 
 if(strpos($text, "/start") === 0)
@@ -52,6 +55,10 @@ echo $pianeta->creaPianeta();
 //echo $pianeta->creaPianeta();
 echo $utente->incrementaXP(10);
 */
+
+$parameters = array('chat_id' => $chatId, "text" => "mammt");
+$parameters["method"] = "sendMessage";
+echo json_encode($parameters);
 
 
 ?>
