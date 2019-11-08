@@ -1,6 +1,7 @@
 <?php
 
 require_once("mysql_db.php");
+require_once("pianeta.php");
 
 class Utente {
     private $nome_utente;
