@@ -1,7 +1,7 @@
 <?php
 
 // PARAMETRI DA MODIFICARE
-$WEBHOOK_URL = 'https://zoniabot.herokuapp.com/main.php';
+$WEBHOOK_URL = 'https://zoniabot.herokuapp.com/execute.php';
 $BOT_TOKEN = '923204988:AAEzg-DAkXXfLm0n9neNF1IMsDbk6oj0bww';
 
 // NON APPORTARE MODIFICHE NEL CODICE SEGUENTE
