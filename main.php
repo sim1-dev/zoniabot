@@ -4,10 +4,10 @@ require_once("utente.php");
 require_once("pianeta.php");
 
 $content = file_get_contents("php://input");
-print_r($content);
+echo $content;
 echo "---------------";
 $update = json_decode($content, true);
-print_r($update);
+echo "$update";
 if(!$update)
 {
   exit;
