@@ -12,6 +12,7 @@ if(!$update)
 {
   exit;
 }
+echo "prova2";
 $utente = new Utente($username, $chatId);
 $message = isset($update['message']) ? $update['message'] : "";
 $chatId = isset($message['chat']['id']) ? $message['chat']['id'] : "";
