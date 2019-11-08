@@ -17,7 +17,7 @@ class mysql_db {
   private $dbhost = 'sql.web-developing.it';
   private $dbuser = 'webdevel38223';
   private $dbpass = 'webd83291';
-  private $dbname = 'spazio';
+  private $dbname = 'webdevel38223';
   protected $mysql;
 
   public function getMysql() {
