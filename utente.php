@@ -53,8 +53,7 @@ class Utente {
 
     public function getUtente() {
         $sql = "SELECT * FROM utenti WHERE id_utente = $this->id_utente";
-        $row = $this->mySql->query($sql);
-        if($row != 0) {
+        $row = $this->mySql->fetch_array_by_id($sql);
             $this->livello = $row["livello"];
             $this->metallo = $row["metallo"];
             $this->cristallo = $row["cristallo"];
@@ -64,7 +63,6 @@ class Utente {
             $this->data_iscrizione = $row["data_iscrizione"];
             $this->invitato_da = $row["invitato_da"];
             $this->onore = $row["onore"];
-        }
         return;
     }
 
