@@ -52,8 +52,9 @@ else if(strpos($text, "/status") === 0)
         $invitatoda = "";
     }
     $response = "Utente ".$utente->getNome_utente()."
+
     Livello ".$utente->getLivello()."
-    Esperienza: ".$utente->getEsperienza()."
+    Esperienza: ".$utente->getEsperienza().":star:
     Onore: ".$utente->getOnore()."
     Metallo: ".$utente->getMetallo()."
     Cristallo: ".$utente->getCristallo()."
