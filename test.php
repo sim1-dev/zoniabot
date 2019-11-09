@@ -43,6 +43,8 @@ echo $pianeta->creaPianeta();
 echo $pianeta->creaPianeta();
 echo $utente->incrementaXP(10);*/
 
+$utente->creaUtente();
+
 echo "Utente ".$utente->getNome_utente()." Livello ".$utente->getLivello();
 
 

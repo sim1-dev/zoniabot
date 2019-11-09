@@ -33,7 +33,7 @@ $response = '';
 
 if(strpos($text, "/start") === 0)
 {
-    $response = 'Malvenuto in Zonia, una brutta copia di OGame creata da @TeamBallo! Usa /registrami per registrarti! (BETA)';
+    $response = 'Malvenuto in Zonia, una brutta copia di OGame ideata da @TeamBallo! Usa /registrami per registrarti! (BETA)';
     sendMessage($response);
 }
 
@@ -46,23 +46,46 @@ else if(strpos($text, "/registrami") === 0)
 else if(strpos($text, "/status") === 0)
 {
     $invitatoda = "Invitato da: ";
-    $invitatoda .= $utente->getInvitato_da();
+    $invitatoda .= $utente->getInvitato_da()." \u{2709}";
     if($utente->getInvitato_da() == "")
     {
         $invitatoda = "";
     }
     $response = "Utente ".$utente->getNome_utente()."
-    Livello ".$utente->getLivello()."
-    Esperienza: ".$utente->getEsperienza()."
-    Onore: ".$utente->getOnore()."
-    Metallo: ".$utente->getMetallo()."
-    Cristallo: ".$utente->getCristallo()."
-    Deuterio: ".$utente->getDeuterio()."
-    Energia: ".$utente->getEnergia()."
+
+    Attualmente su ".$utente->getPianeta_corrente()."
+
+    Livello ".$utente->getLivello()." \u{1F9D1}
+    Esperienza: ".$utente->getEsperienza()." \u{2B50}
+    Onore: ".$utente->getOnore()." \u{1F396}
+    Metallo: ".$utente->getMetallo()." \u{2699}
+    Cristallo: ".$utente->getCristallo()."\u{2744}
+    Deuterio: ".$utente->getDeuterio()." \u{1F9CA}
+    Energia: ".$utente->getEnergia()." \u{26A1}
 
     Data registrazione: ".$utente->getData_iscrizione()
 
     .$invitatoda;
+    sendMessage($response);
+}
+
+else if(strpos($text, "/viaggio") === 0)
+{
+    $destinazione = ucfirst(substr($text, 9));
+    $idp = selectIdPianeta($destinazione);
+    $pianeta = new Pianeta($idp);
+    $pianeta->getPianeta();
+    if($pianeta->getId_proprietario() == $utente->getId_utente())
+    {
+        $utente->trasferisciSu($pianeta->getNome_pianeta());
+        $response = "Trasferimento su ".$destinazione." completato con successo.";
+    }
+    else if($pianeta->getId_pianeta() == $utente->getPianeta_corrente())
+    {
+        $response = "Ti trovi già su ".$destinazione."!";
+    }
+    else $response = "Il pianeta su cui stai cercando di trasferirti non è tuo!";
+    
     sendMessage($response);
 }
 
