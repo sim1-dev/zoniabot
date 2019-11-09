@@ -54,7 +54,7 @@ else if(strpos($text, "/status") === 0)
     $response = "Utente ".$utente->getNome_utente()."
 
     Livello ".$utente->getLivello()."
-    Esperienza: ".$utente->getEsperienza().":star:
+    Esperienza: ".$utente->getEsperienza()."\u{1F30F}
     Onore: ".$utente->getOnore()."
     Metallo: ".$utente->getMetallo()."
     Cristallo: ".$utente->getCristallo()."
