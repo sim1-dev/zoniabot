@@ -81,7 +81,7 @@ else if(strpos($text, "/viaggio") === 0)
         $utente->trasferisciSu($pianeta->getNome_pianeta());
         $response = "Trasferimento su ".$destinazione." completato con successo.";
     }
-    else if($pianeta->getId_pianeta() == $utente->getPianeta_corrente())
+    else if($destinazione == $utente->getPianeta_corrente())
     {
         $response = "Ti trovi già su ".$destinazione."!";
     }
