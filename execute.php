@@ -45,8 +45,8 @@ else if(strpos($text, "/registrami") === 0)
 
 else if(strpos($text, "/status") === 0)
 {
-    sendMessage("Utente ".$utente->nome_utente."/n
-    Livello ".$utente->livello."/n
+    sendMessage("Utente ".$utente->nome_utente."
+    Livello ".$utente->livello."
     ");
 }
 
