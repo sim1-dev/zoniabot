@@ -45,6 +45,12 @@ else if(strpos($text, "/registrami") === 0)
 
 else if(strpos($text, "/status") === 0)
 {
+    $invitatoda = "Invitato da: ";
+    $invitatoda .= $utente->getInvitato_da();
+    if($utente->getInvitato_da() == "")
+    {
+        $invitatoda = "";
+    }
     $response = "Utente ".$utente->getNome_utente()."
     Livello ".$utente->getLivello()."
     Esperienza: ".$utente->getEsperienza()."
@@ -54,9 +60,9 @@ else if(strpos($text, "/status") === 0)
     Deuterio: ".$utente->getDeuterio()."
     Energia: ".$utente->getEnergia()."
 
-    Data registrazione: ".$utente->getData_iscrizione()."
+    Data registrazione: ".$utente->getData_iscrizione()
 
-    Invitato da: ".$utente->getInvitato_da();
+    .$invitatoda;
     sendMessage($response);
 }
 
