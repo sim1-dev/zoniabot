@@ -45,6 +45,7 @@ else if(strpos($text, "/registrami") === 0)
 
 else if(strpos($text, "/status") === 0)
 {
+    $utente->getUtente();
     $response = "Utente ".$utente->getNome_utente()."/n
     Livello ".$utente->getLivello()."/n
     Metallo: ".$utente->getMetallo()."/n
