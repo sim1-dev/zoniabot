@@ -68,10 +68,6 @@ class Utente {
         return;
     }
 
-    public function getLivello() {
-        return $this->livello;
-    }
-
     public function creaUtente() {
         if(!$this->esisteUtente()) {
             $sql = "INSERT INTO utenti 
@@ -108,6 +104,326 @@ class Utente {
         WHERE id_utente = '$this->id_utente'";
         $this->mySql->query($sql);
         return $stringa;
+    }
+
+    /**
+     * Get the value of nome_utente
+     */ 
+    public function getNome_utente()
+    {
+        return $this->nome_utente;
+    }
+
+    /**
+     * Set the value of nome_utente
+     *
+     * @return  self
+     */ 
+    public function setNome_utente($nome_utente)
+    {
+        $this->nome_utente = $nome_utente;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of id_utente
+     */ 
+    public function getId_utente()
+    {
+        return $this->id_utente;
+    }
+
+    /**
+     * Set the value of id_utente
+     *
+     * @return  self
+     */ 
+    public function setId_utente($id_utente)
+    {
+        $this->id_utente = $id_utente;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of livello
+     */ 
+    public function getLivello()
+    {
+        return $this->livello;
+    }
+
+    /**
+     * Set the value of livello
+     *
+     * @return  self
+     */ 
+    public function setLivello($livello)
+    {
+        $this->livello = $livello;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of metallo
+     */ 
+    public function getMetallo()
+    {
+        return $this->metallo;
+    }
+
+    /**
+     * Set the value of metallo
+     *
+     * @return  self
+     */ 
+    public function setMetallo($metallo)
+    {
+        $this->metallo = $metallo;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of cristallo
+     */ 
+    public function getCristallo()
+    {
+        return $this->cristallo;
+    }
+
+    /**
+     * Set the value of cristallo
+     *
+     * @return  self
+     */ 
+    public function setCristallo($cristallo)
+    {
+        $this->cristallo = $cristallo;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of deuterio
+     */ 
+    public function getDeuterio()
+    {
+        return $this->deuterio;
+    }
+
+    /**
+     * Set the value of deuterio
+     *
+     * @return  self
+     */ 
+    public function setDeuterio($deuterio)
+    {
+        $this->deuterio = $deuterio;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of energia
+     */ 
+    public function getEnergia()
+    {
+        return $this->energia;
+    }
+
+    /**
+     * Set the value of energia
+     *
+     * @return  self
+     */ 
+    public function setEnergia($energia)
+    {
+        $this->energia = $energia;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of esperienza
+     */ 
+    public function getEsperienza()
+    {
+        return $this->esperienza;
+    }
+
+    /**
+     * Set the value of esperienza
+     *
+     * @return  self
+     */ 
+    public function setEsperienza($esperienza)
+    {
+        $this->esperienza = $esperienza;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of id_flotta
+     */ 
+    public function getId_flotta()
+    {
+        return $this->id_flotta;
+    }
+
+    /**
+     * Set the value of id_flotta
+     *
+     * @return  self
+     */ 
+    public function setId_flotta($id_flotta)
+    {
+        $this->id_flotta = $id_flotta;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of data_iscrizione
+     */ 
+    public function getData_iscrizione()
+    {
+        return $this->data_iscrizione;
+    }
+
+    /**
+     * Set the value of data_iscrizione
+     *
+     * @return  self
+     */ 
+    public function setData_iscrizione($data_iscrizione)
+    {
+        $this->data_iscrizione = $data_iscrizione;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of invitato_da
+     */ 
+    public function getInvitato_da()
+    {
+        return $this->invitato_da;
+    }
+
+    /**
+     * Set the value of invitato_da
+     *
+     * @return  self
+     */ 
+    public function setInvitato_da($invitato_da)
+    {
+        $this->invitato_da = $invitato_da;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of data_ultima_azione
+     */ 
+    public function getData_ultima_azione()
+    {
+        return $this->data_ultima_azione;
+    }
+
+    /**
+     * Set the value of data_ultima_azione
+     *
+     * @return  self
+     */ 
+    public function setData_ultima_azione($data_ultima_azione)
+    {
+        $this->data_ultima_azione = $data_ultima_azione;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of numero_pianeti
+     */ 
+    public function getNumero_pianeti()
+    {
+        return $this->numero_pianeti;
+    }
+
+    /**
+     * Set the value of numero_pianeti
+     *
+     * @return  self
+     */ 
+    public function setNumero_pianeti($numero_pianeti)
+    {
+        $this->numero_pianeti = $numero_pianeti;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of onore
+     */ 
+    public function getOnore()
+    {
+        return $this->onore;
+    }
+
+    /**
+     * Set the value of onore
+     *
+     * @return  self
+     */ 
+    public function setOnore($onore)
+    {
+        $this->onore = $onore;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of admin
+     */ 
+    public function getAdmin()
+    {
+        return $this->admin;
+    }
+
+    /**
+     * Set the value of admin
+     *
+     * @return  self
+     */ 
+    public function setAdmin($admin)
+    {
+        $this->admin = $admin;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of bannato
+     */ 
+    public function getBannato()
+    {
+        return $this->bannato;
+    }
+
+    /**
+     * Set the value of bannato
+     *
+     * @return  self
+     */ 
+    public function setBannato($bannato)
+    {
+        $this->bannato = $bannato;
+
+        return $this;
     }
 }
 
