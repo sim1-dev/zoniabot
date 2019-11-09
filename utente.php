@@ -81,7 +81,7 @@ class Utente {
             $sql = "INSERT INTO utenti 
             (nome_utente, id_utente, livello, metallo, cristallo, deuterio, energia, esperienza, id_flotta, data_iscrizione, invitato_da, data_ultima_azione, numero_pianeti, admin, onore, bannato, pianeta_corrente)
             VALUES
-            ('$this->nome_utente', '$this->id_utente', '$this->livello', '$this->metallo', '$this->cristallo', '$this->deuterio', '$this->energia', '$this->esperienza', '$this->id_flotta', '$this->data_iscrizione', '$this->invitato_da', '$this->data_ultima_azione', '$this->numero_pianeti', '$this->admin', '$this->onore', '$this->onore', '$this->pianeta_corrente')  
+            ('$this->nome_utente', '$this->id_utente', '$this->livello', '$this->metallo', '$this->cristallo', '$this->deuterio', '$this->energia', '$this->esperienza', '$this->id_flotta', '$this->data_iscrizione', '$this->invitato_da', '$this->data_ultima_azione', '$this->numero_pianeti', '$this->admin', '$this->onore', '$this->bannato', '$this->pianeta_corrente')  
             ";
             $this->mySql->query($sql);
             $pianeta = new Pianeta($this->id_utente, "Pianeta senza nome"); //hmmmmm
