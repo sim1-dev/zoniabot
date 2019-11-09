@@ -33,7 +33,7 @@ $response = '';
 
 if(strpos($text, "/start") === 0)
 {
-    $response = 'Malvenuto in Zonia, una brutta copia di OGame ideata da @TeamBallo! Usa /registrami per registrarti! (BETA)';
+    $response = 'Malvenuto in Zonia, una brutta copia di OGame creata da @TeamBallo! Usa /registrami per registrarti! (BETA)';
     sendMessage($response);
 }
 
@@ -53,8 +53,6 @@ else if(strpos($text, "/status") === 0)
     }
     $response = "Utente ".$utente->getNome_utente()."
 
-    Attualmente su ".$utente->getPianeta_corrente()."
-
     Livello ".$utente->getLivello()." \u{1F9D1}
     Esperienza: ".$utente->getEsperienza()." \u{2B50}
     Onore: ".$utente->getOnore()." \u{1F396}
@@ -66,26 +64,6 @@ else if(strpos($text, "/status") === 0)
     Data registrazione: ".$utente->getData_iscrizione()
 
     .$invitatoda;
-    sendMessage($response);
-}
-
-else if(strpos($text, "/viaggio") === 0)
-{
-    $destinazione = ucfirst(substr($text, 9));
-    $idp = selectIdPianeta($destinazione);
-    $pianeta = new Pianeta($idp);
-    $pianeta->getPianeta();
-    if($pianeta->getId_proprietario() == $utente->getId_utente())
-    {
-        $utente->trasferisciSu($pianeta->getNome_pianeta());
-        $response = "Trasferimento su ".$destinazione." completato con successo.";
-    }
-    else if($pianeta->getId_pianeta() == $utente->getPianeta_corrente())
-    {
-        $response = "Ti trovi già su ".$destinazione."!";
-    }
-    else $response = "Il pianeta su cui stai cercando di trasferirti non è tuo!";
-    
     sendMessage($response);
 }
 
