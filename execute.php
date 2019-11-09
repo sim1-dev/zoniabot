@@ -46,20 +46,19 @@ else if(strpos($text, "/registrami") === 0)
 else if(strpos($text, "/status") === 0)
 {
     $invitatoda = "Invitato da: ";
-    $invitatoda .= $utente->getInvitato_da()." \u{2709}";
+    $invitatoda .= $utente->getInvitato_da();
     if($utente->getInvitato_da() == "")
     {
         $invitatoda = "";
     }
     $response = "Utente ".$utente->getNome_utente()."
-
-    Livello ".$utente->getLivello()." \u{1F9D1}
-    Esperienza: ".$utente->getEsperienza()." \u{2B50}
-    Onore: ".$utente->getOnore()." \u{1F396}
-    Metallo: ".$utente->getMetallo()." \u{2699}
-    Cristallo: ".$utente->getCristallo()."\u{2744}
-    Deuterio: ".$utente->getDeuterio()." \u{1F9CA}
-    Energia: ".$utente->getEnergia()." \u{26A1}
+    Livello ".$utente->getLivello()."
+    Esperienza: ".$utente->getEsperienza()."
+    Onore: ".$utente->getOnore()."
+    Metallo: ".$utente->getMetallo()."
+    Cristallo: ".$utente->getCristallo()."
+    Deuterio: ".$utente->getDeuterio()."
+    Energia: ".$utente->getEnergia()."
 
     Data registrazione: ".$utente->getData_iscrizione()
 
