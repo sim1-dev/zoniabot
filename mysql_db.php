@@ -35,7 +35,7 @@ class mysql_db {
   }
 
   // error reporting
-  private function error() {
+  public function error() {
     return printf( 'MySQL ERROR: %s (%d)', mysqli_error($this->mysql), mysqli_errno($this->mysql) );
    }
 

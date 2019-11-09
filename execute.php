@@ -33,7 +33,7 @@ $response = '';
 
 if(strpos($text, "/start") === 0)
 {
-    $response = 'Malvenuto in Zonia, una brutta copia di OGame creata da @TeamBallo! Usa /registrami per registrarti! (BETA)';
+    $response = 'Malvenuto in Zonia, una brutta copia di OGame ideata da @TeamBallo! Usa /registrami per registrarti! (BETA)';
     sendMessage($response);
 }
 
