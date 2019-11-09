@@ -45,9 +45,10 @@ else if(strpos($text, "/registrami") === 0)
 
 else if(strpos($text, "/status") === 0)
 {
-    sendMessage("Utente ".$utente->nome_utente."
+    $response = "Utente ".$utente->nome_utente."
     Livello ".$utente->livello."
-    ");
+    ";
+    sendMessage($response);
 }
 
 /*$pianeta = new Pianeta("107280272", "Betelgeuse");
