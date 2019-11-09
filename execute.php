@@ -3,10 +3,6 @@
 require_once("utente.php");
 require_once("pianeta.php");
 
-echo "prova";
-
-//$utente = new Utente("TeamBallo", "107280272");
-
 $content = file_get_contents("php://input");
 $update = json_decode($content, true);
 if(!$update)
@@ -34,6 +30,7 @@ $response = '';
 if(strpos($text, "/start") === 0)
 {
     $response = 'Malvenuto in Zonia, una brutta copia di OGame creata da @TeamBallo! Usa /registrami per registrarti! (BETA)';
+    sendMessage($response);
 }
 
 if(strpos($text, "/registrami") === 0)
