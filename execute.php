@@ -72,9 +72,10 @@ else if(strpos($text, "/status") === 0)
 else if(strpos($text, "/viaggio") === 0)
 {
     $destinazione = ucfirst(substr($text, 9));
-    $idp = selectIdPianeta($destinazione);
-    $pianeta = new Pianeta($idp);
+    $pianeta = new Pianeta($utente->getId_utente());
+    $idp = $pianeta->selectIdPianeta($destinazione);
     $pianeta->getPianeta();
+    $pianeta->setId_pianeta($idp);
     if($pianeta->getId_proprietario() == $utente->getId_utente())
     {
         $utente->trasferisciSu($pianeta->getNome_pianeta());

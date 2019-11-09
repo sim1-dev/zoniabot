@@ -47,6 +47,21 @@ $utente->creaUtente();
 
 echo "Utente ".$utente->getNome_utente()." Livello ".$utente->getLivello();
 
+    $text = "/viaggio Pandora";
+    $destinazione = ucfirst(substr($text, 9));
+    $pianeta = new Pianeta($utente->getId_utente());
+    $idp = $pianeta->selectIdPianeta($destinazione);
+    $pianeta->getPianeta();
+    $pianeta->setId_pianeta($idp);
 
+
+        $utente->trasferisciSu($pianeta->getNome_pianeta());
+        echo "Trasferimento su ".$destinazione." completato con successo.";
+
+    if($pianeta->getId_pianeta() == $utente->getPianeta_corrente())
+    {
+        echo "Ti trovi già su ".$destinazione."!";
+    }
+    else echo "Il pianeta su cui stai cercando di trasferirti non è tuo!";
 
 ?>
