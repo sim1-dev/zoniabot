@@ -45,11 +45,18 @@ else if(strpos($text, "/registrami") === 0)
 
 else if(strpos($text, "/status") === 0)
 {
-    $utente->getUtente();
-    $response = "Utente ".$utente->getNome_utente()."/n
-    Livello ".$utente->getLivello()."/n
-    Metallo: ".$utente->getMetallo()."/n
-    Cristallo: ".$utente->getCristallo();
+    $response = "Utente ".$utente->getNome_utente()."
+    Livello ".$utente->getLivello()."
+    Esperienza: ".$utente->getEsperienza()"
+    Onore: ".$utente->getOnore()"
+    Metallo: ".$utente->getMetallo()."
+    Cristallo: ".$utente->getCristallo()"
+    Deuterio: ".$utente->getDeuterio()"
+    Energia: ".$utente->getEnergia()"
+
+    Data registrazione: ".$utente->getData_iscrizione()"
+
+    Invitato da: ".$utente->getInvitato_da();
     sendMessage($response);
 }
 
