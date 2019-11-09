@@ -3,19 +3,22 @@
 require_once("utente.php");
 require_once("pianeta.php");
 
+//$utente = new Utente("TeamBallo", "107280272");
+
 $content = file_get_contents("php://input");
 $update = json_decode($content, true);
 if(!$update)
 {
   exit;
 }
-$utente = new Utente($username, $chatId);
+
 $message = isset($update['message']) ? $update['message'] : "";
 $chatId = isset($message['chat']['id']) ? $message['chat']['id'] : "";
 $username = isset($message['chat']['username']) ? $message['chat']['username'] : "";
 $text = isset($message['text']) ? $message['text'] : "";
 $text = trim($text);
 $text = strtolower($text);
+$utente = new Utente($username, $chatId);
 
 function sendMessage($response) {
     global $chatId;
@@ -33,13 +36,13 @@ if(strpos($text, "/start") === 0)
     sendMessage($response);
 }
 
-if(strpos($text, "/registrami") === 0)
+else if(strpos($text, "/registrami") === 0)
 {
     $response = $utente->creaUtente();
     sendMessage($response);
 }
 
-if(strpos($text, "/status") === 0)
+else if(strpos($text, "/status") === 0)
 {
     sendMessage($utente);
 }
