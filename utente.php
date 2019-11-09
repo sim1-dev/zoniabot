@@ -20,9 +20,10 @@ class Utente {
     private $onore;
     private $admin;
     private $bannato;
+    private $pianeta_corrente;
     protected $mySql;
 
-    public function __construct($nome_utente, $id_utente, $admin = 0, $livello = 1, $metallo = 1000, $cristallo = 400, $deuterio = 100, $energia = 0, $esperienza = 0, $id_flotta = 0, $data_iscrizione = "", $invitato_da = "", $data_ultima_azione = 0, $numero_pianeti = 0, $onore = 0, $bannato = 0) {
+    public function __construct($nome_utente, $id_utente, $admin = 0, $livello = 1, $metallo = 1000, $cristallo = 400, $deuterio = 100, $energia = 0, $esperienza = 0, $id_flotta = 0, $data_iscrizione = "", $invitato_da = "", $data_ultima_azione = 0, $numero_pianeti = 0, $onore = 0, $bannato = 0, $pianeta_corrente = "") {
         $this->nome_utente = $nome_utente;
         $this->id_utente = $id_utente;
         $this->livello = $livello;
@@ -38,7 +39,8 @@ class Utente {
         $this->numero_pianeti = $numero_pianeti;
         $this->admin = $admin;
         $this->onore = $onore;
-        $this->bannato = $bannato;        
+        $this->bannato = $bannato;
+        $this->pianeta_corrente = $pianeta_corrente;        
         $this->mySql = new mySql_db();
     }
 
@@ -63,15 +65,23 @@ class Utente {
             $this->data_iscrizione = $row["data_iscrizione"];
             $this->invitato_da = $row["invitato_da"];
             $this->onore = $row["onore"];
+            $this->pianeta_corrente = $row["pianeta_corrente"];
         return;
+    }
+
+    public function trasferisciSu($_nome_pianeta) {
+        $sql = "UPDATE `utenti` SET 
+        `pianeta_corrente` = '$_nome_pianeta'
+         WHERE id_utente = '$this->id_utente'";
+         $this->mySql->query($sql);
     }
 
     public function creaUtente() {
         if(!$this->esisteUtente()) {
             $sql = "INSERT INTO utenti 
-            (nome_utente, id_utente, livello, metallo, cristallo, deuterio, energia, esperienza, id_flotta, data_iscrizione, invitato_da, data_ultima_azione, numero_pianeti, admin, onore, bannato)
+            (nome_utente, id_utente, livello, metallo, cristallo, deuterio, energia, esperienza, id_flotta, data_iscrizione, invitato_da, data_ultima_azione, numero_pianeti, admin, onore, bannato, pianeta_corrente)
             VALUES
-            ('$this->nome_utente', '$this->id_utente', '$this->livello', '$this->metallo', '$this->cristallo', '$this->deuterio', '$this->energia', '$this->esperienza', '$this->id_flotta', '$this->data_iscrizione', '$this->invitato_da', '$this->data_ultima_azione', '$this->numero_pianeti', '$this->admin', '$this->onore', '$this->onore')  
+            ('$this->nome_utente', '$this->id_utente', '$this->livello', '$this->metallo', '$this->cristallo', '$this->deuterio', '$this->energia', '$this->esperienza', '$this->id_flotta', '$this->data_iscrizione', '$this->invitato_da', '$this->data_ultima_azione', '$this->numero_pianeti', '$this->admin', '$this->onore', '$this->onore', '$this->pianeta_corrente')  
             ";
             $this->mySql->query($sql);
             $pianeta = new Pianeta($this->id_utente, "Pianeta senza nome"); //hmmmmm
@@ -420,6 +430,26 @@ class Utente {
     public function setBannato($bannato)
     {
         $this->bannato = $bannato;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of pianeta_corrente
+     */ 
+    public function getPianeta_corrente()
+    {
+        return $this->pianeta_corrente;
+    }
+
+    /**
+     * Set the value of pianeta_corrente
+     *
+     * @return  self
+     */ 
+    public function setPianeta_corrente($pianeta_corrente)
+    {
+        $this->pianeta_corrente = $pianeta_corrente;
 
         return $this;
     }
