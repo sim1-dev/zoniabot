@@ -19,6 +19,7 @@ $text = isset($message['text']) ? $message['text'] : "";
 $text = trim($text);
 $text = strtolower($text);
 $utente = new Utente($username, $chatId);
+$utente->getUtente();
 
 function sendMessage($response) {
     global $chatId;

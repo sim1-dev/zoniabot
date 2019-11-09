@@ -51,6 +51,23 @@ class Utente {
             return true;
     }
 
+    public function getUtente() {
+        $sql = "SELECT * FROM utenti WHERE id_utente = $this->id_utente";
+        $row = $this->mySql->query($sql);
+        if($row != 0) {
+            $this->livello = $row["livello"];
+            $this->metallo = $row["metallo"];
+            $this->cristallo = $row["cristallo"];
+            $this->deuterio = $row["deuterio"];
+            $this->energia = $row["energia"];
+            $this->esperienza = $row["esperienza"];
+            $this->data_iscrizione = $row["data_iscrizione"];
+            $this->invitato_da = $row["invitato_da"];
+            $this->onore = $row["onore"];
+        }
+        return;
+    }
+
     public function getLivello() {
         return $this->livello;
     }
