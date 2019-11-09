@@ -47,14 +47,14 @@ else if(strpos($text, "/status") === 0)
 {
     $response = "Utente ".$utente->getNome_utente()."
     Livello ".$utente->getLivello()."
-    Esperienza: ".$utente->getEsperienza()"
-    Onore: ".$utente->getOnore()"
+    Esperienza: ".$utente->getEsperienza()."
+    Onore: ".$utente->getOnore()."
     Metallo: ".$utente->getMetallo()."
-    Cristallo: ".$utente->getCristallo()"
-    Deuterio: ".$utente->getDeuterio()"
-    Energia: ".$utente->getEnergia()"
+    Cristallo: ".$utente->getCristallo()."
+    Deuterio: ".$utente->getDeuterio()."
+    Energia: ".$utente->getEnergia()."
 
-    Data registrazione: ".$utente->getData_iscrizione()"
+    Data registrazione: ".$utente->getData_iscrizione()."
 
     Invitato da: ".$utente->getInvitato_da();
     sendMessage($response);
