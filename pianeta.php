@@ -29,8 +29,9 @@ class Pianeta {
     }
 
     public function selectIdPianeta($nome) {
-        $sql = "SELECT * FROM pianeti INNER JOIN utenti ON utenti.id_utente = '$this->id_proprietario' WHERE pianeti.nome_pianeta = '$nome'";
-        $row = $this->mySql->query($sql);
+        //$sql = "SELECT * FROM pianeti INNER JOIN utenti ON utenti.id_utente = '$this->id_proprietario' WHERE pianeti.nome_pianeta = '$nome'";
+        $sql = "SELECT * FROM pianeti INNER JOIN utenti ON utenti.id_utente = pianeti.id_proprietario WHERE pianeti.nome_pianeta = '$nome'";
+        $row = $this->mySql->fetch_array_by_id($sql);
         //var_dump($row);
         return $row["id_pianeta"];
     }
@@ -46,7 +47,6 @@ class Pianeta {
             $this->spazio_pianeta = $row["spazio_pianeta"];
             $this->detriti = $row["detriti"];
             $this->id_proprietario = $row["id_proprietario"];
-        return;
     }
 
     public function creaPianeta() {

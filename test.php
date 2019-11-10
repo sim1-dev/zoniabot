@@ -45,25 +45,35 @@ echo $utente->incrementaXP(10);*/
 
 $utente->creaUtente();
 
-echo "Utente ".$utente->getNome_utente()." Livello ".$utente->getLivello();
+//echo "Utente ".$utente->getNome_utente()." Livello ".$utente->getLivello();
 
-    $text = "/viaggio Pandora";
+    $text = "/viaggio Betelgeuse";
+    $text = trim($text);
+    $text = strtolower($text);
+    $text = ucfirst($text);
     $destinazione = ucfirst(substr($text, 9));
     $pianeta = new Pianeta($utente->getId_utente());
     $idp = $pianeta->selectIdPianeta($destinazione);
+    echo $idp;
     $pianeta->setId_pianeta($idp);
     $pianeta->getPianeta();
 
 
-        $utente->trasferisciSu($pianeta->getNome_pianeta());
+      /*  $utente->trasferisciSu($pianeta->getNome_pianeta());
         echo "Trasferimento su ".$destinazione." completato con successo.";
-
-    if($pianeta->getId_pianeta() == $utente->getPianeta_corrente())
+*/
+ /*   if($pianeta->getId_pianeta() == $utente->getPianeta_corrente())
     {
         echo "Ti trovi già su ".$destinazione."!";
     }
     else echo "Il pianeta su cui stai cercando di trasferirti non è tuo!";
 
     echo "Id Proprietario: ".$pianeta->getId_proprietario();
+    echo '</br>';
+    echo "Id Utente: ".$utente->getId_utente();
+    echo '</br>';
+    echo "Nome Pianeta: ".$pianeta->getNome_pianeta();
+    echo '</br>';
+    echo "Pianeta Corrente: ".$utente->getPianeta_corrente();*/
 
 ?>
