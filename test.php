@@ -64,4 +64,6 @@ echo "Utente ".$utente->getNome_utente()." Livello ".$utente->getLivello();
     }
     else echo "Il pianeta su cui stai cercando di trasferirti non è tuo!";
 
+    echo "Id Proprietario: ".$pianeta->getId_proprietario();
+
 ?>

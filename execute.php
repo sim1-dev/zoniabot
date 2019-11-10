@@ -71,6 +71,7 @@ else if(strpos($text, "/status") === 0)
 
 else if(strpos($text, "/viaggio") === 0)
 {
+    $text = ucfirst($text);
     $destinazione = ucfirst(substr($text, 9));
     $pianeta = new Pianeta($utente->getId_utente());
     $idp = $pianeta->selectIdPianeta($destinazione);
