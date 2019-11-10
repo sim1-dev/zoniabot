@@ -85,7 +85,10 @@ else if(strpos($text, "/viaggio") === 0)
     {
         $response = "Ti trovi già su ".$destinazione."!";
     }
-    else $response = "Il pianeta su cui stai cercando di trasferirti non esiste o non è tuo!";
+    else 
+    {
+        $response = "Il pianeta su cui stai cercando di trasferirti non esiste o non è tuo!";
+    }
 
      /*   if($destinazione = "" || $destinazione = " " || $destinazione = "  ")
     {

@@ -37,7 +37,7 @@ class Pianeta {
 
     public function getPianeta() {
         $sql = "SELECT * FROM pianeti WHERE id_pianeta ='$this->id_pianeta'";
-        $row = $this->mySql->fetch_array($sql);
+        $row = $this->mySql->fetch_array_by_id($sql);
             $this->nome_pianeta = $row["nome_pianeta"];
             $this->tipo_pianeta = $row["tipo_pianeta"];
             $this->livello_pianeta = $row["livello_pianeta"];
