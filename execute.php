@@ -77,7 +77,7 @@ else if(strpos($text, "/viaggio") === 0)
     $idp = $pianeta->selectIdPianeta($destinazione);
     $pianeta->setId_pianeta($idp);
     $pianeta->getPianeta();
-    if($pianeta->getId_proprietario() == $utente->getId_utente())
+    if($pianeta->getId_proprietario() == $utente->getId_utente() && $pianeta->getNome_pianeta() != $utente->getPianeta_corrente())
     {
         $utente->trasferisciSu($pianeta->getNome_pianeta());
         $response = "Trasferimento su ".$destinazione." completato con successo.";
