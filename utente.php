@@ -114,10 +114,13 @@ class Utente {
     }
 
     public function trasferisciSu($_nome_pianeta) {
-        $sql = "UPDATE utenti SET 
-        pianeta_corrente = '$_nome_pianeta'
-         WHERE id_utente = '$this->id_utente'";
-         $this->mySql->query($sql);
+        $sql = "UPDATE utenti 
+        INNER JOIN pianeti
+        ON utenti.id_utente = pianeti.id_proprietario
+        SET utenti.pianeta_corrente = '$_nome_pianeta'
+        WHERE utenti.id_utente = '$this->id_utente'
+        AND pianeti.nome_pianeta = '$_nome_pianeta'";
+        $this->mySql->query($sql);
     }
 
     /**
