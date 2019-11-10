@@ -23,7 +23,7 @@ class Utente {
     private $pianeta_corrente;
     protected $mySql;
 
-    public function __construct($nome_utente, $id_utente, $admin = 0, $livello = 1, $metallo = 1000, $cristallo = 400, $deuterio = 100, $energia = 0, $esperienza = 0, $id_flotta = 0, $data_iscrizione = "", $invitato_da = "", $data_ultima_azione = 0, $numero_pianeti = 0, $onore = 0, $bannato = 0, $pianeta_corrente = "") {
+    public function __construct($nome_utente, $id_utente, $admin = 0, $livello = 1, $metallo = 1000, $cristallo = 400, $deuterio = 100, $energia = 0, $esperienza = 0, $id_flotta = 0, $data_iscrizione = "", $invitato_da = "", $data_ultima_azione = 0, $numero_pianeti = 0, $onore = 0, $bannato = 0, $pianeta_corrente = "Pianeta senza nome") {
         $this->nome_utente = $nome_utente;
         $this->id_utente = $id_utente;
         $this->livello = $livello;
