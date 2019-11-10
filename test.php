@@ -51,8 +51,8 @@ echo "Utente ".$utente->getNome_utente()." Livello ".$utente->getLivello();
     $destinazione = ucfirst(substr($text, 9));
     $pianeta = new Pianeta($utente->getId_utente());
     $idp = $pianeta->selectIdPianeta($destinazione);
-    $pianeta->getPianeta();
     $pianeta->setId_pianeta($idp);
+    $pianeta->getPianeta();
 
 
         $utente->trasferisciSu($pianeta->getNome_pianeta());
