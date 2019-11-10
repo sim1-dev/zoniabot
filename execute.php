@@ -72,10 +72,6 @@ else if(strpos($text, "/status") === 0)
 else if(strpos($text, "/viaggio") === 0)
 {
     $destinazione = ucfirst(substr($text, 9));
-    if($destinazione = "" || $destinazione = " " || $destinazione = "  ")
-    {
-        $response = "Sintassi: /viaggio nomepianeta";
-    }
     $pianeta = new Pianeta($utente->getId_utente());
     $idp = $pianeta->selectIdPianeta($destinazione);
     //$pianeta->setId_pianeta($idp);
@@ -86,11 +82,16 @@ else if(strpos($text, "/viaggio") === 0)
         $utente->trasferisciSu($pianeta->getNome_pianeta());
         $response = "Trasferimento su ".$destinazione." completato con successo.";
     }
-    else if($pianeta->getId_pianeta() == $utente->getPianeta_corrente())
+    else if($pianeta->getNome_pianeta() == $utente->getPianeta_corrente())
     {
         $response = "Ti trovi già su ".$destinazione."!";
     }
     else $response = "Il pianeta su cui stai cercando di trasferirti non esiste o non è tuo!";
+
+        if($destinazione = "" || $destinazione = " " || $destinazione = "  ")
+    {
+        $response = "Sintassi: /viaggio nomepianeta";
+    }
     
     sendMessage($response);
 }
