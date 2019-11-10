@@ -88,10 +88,10 @@ else if(strpos($text, "/viaggio") === 0)
     }
     else $response = "Il pianeta su cui stai cercando di trasferirti non esiste o non è tuo!";
 
-        if($destinazione = "" || $destinazione = " " || $destinazione = "  ")
+     /*   if($destinazione = "" || $destinazione = " " || $destinazione = "  ")
     {
         $response = "Sintassi: /viaggio nomepianeta";
-    }
+    }*/
     
     sendMessage($response);
 }
