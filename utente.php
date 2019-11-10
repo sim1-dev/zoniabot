@@ -65,6 +65,7 @@ class Utente {
             $this->data_iscrizione = $row["data_iscrizione"];
             $this->invitato_da = $row["invitato_da"];
             $this->onore = $row["onore"];
+            $this->pianeta_corrente = $row["pianeta_corrente"];
         return;
     }
 
