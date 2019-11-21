@@ -76,4 +76,6 @@ $utente->creaUtente();
     echo '</br>';
     echo "Pianeta Corrente: ".$utente->getPianeta_corrente();*/
 
+    //commento di prova
+
 ?>

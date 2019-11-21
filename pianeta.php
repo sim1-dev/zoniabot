@@ -15,7 +15,7 @@ class Pianeta {
     private $id_proprietario;
     protected $mySql;
 
-    public function __construct($id_proprietario, $nome_pianeta = 'Pianeta senza nome', $tipo_pianeta = '', $livello_pianeta = 1, $massa = 0, $temperatura = "", $spazio = 0, $detriti = 0, $id_pianeta = 0) {
+    public function __construct($id_proprietario, $nome_pianeta = 'Burraco', $tipo_pianeta = '', $livello_pianeta = 1, $massa = 0, $temperatura = "", $spazio = 0, $detriti = 0, $id_pianeta = 0) {
         $this->id_pianeta = rand(100000,999999);
         $this->id_proprietario = $id_proprietario;
         $this->nome_pianeta = $nome_pianeta;
