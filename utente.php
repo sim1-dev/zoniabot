@@ -76,7 +76,7 @@ class Utente {
             VALUES
             ('$this->nome_utente', '$this->id_utente', '$this->livello', '$this->metallo', '$this->cristallo', '$this->deuterio', '$this->energia', '$this->esperienza', '$this->id_flotta', '$this->data_iscrizione', '$this->invitato_da', '$this->data_ultima_azione', '$this->numero_pianeti', '$this->admin', '$this->onore', '$this->onore', '$this->pianeta_corrente')  
             ";*/
-            $pianeta = new Pianeta($this->id_utente, "Pianeta senza nome"); //hmmmmm
+            $pianeta = new Pianeta($this->id_utente); //hmmmmm
             $pianeta->creaPianeta();
             $this->pianeta_corrente = $pianeta->getNome_pianeta();
             $sql = "INSERT INTO utenti 

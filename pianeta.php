@@ -30,7 +30,7 @@ class Pianeta {
 
     public function selectIdPianeta($nome) {
         //$sql = "SELECT * FROM pianeti INNER JOIN utenti ON utenti.id_utente = '$this->id_proprietario' WHERE pianeti.nome_pianeta = '$nome'";
-        $sql = "SELECT * FROM pianeti INNER JOIN utenti ON utenti.id_utente = pianeti.id_proprietario WHERE pianeti.nome_pianeta = '$nome'";
+        $sql = "SELECT * FROM pianeti INNER JOIN utenti ON utenti.id_utente = pianeti.id_proprietario WHERE pianeti.nome_pianeta LIKE '$nome'";
         $row = $this->mySql->fetch_array_by_id($sql);
         //var_dump($row);
         return $row["id_pianeta"];
