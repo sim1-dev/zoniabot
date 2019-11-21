@@ -1,3 +1,3 @@
-# Telegram Echo Bot
+# Telegram Zonia Game Bot
 
-This is a sample Telegram Bot written in PHP running on Heroku
+This is a sample Telegram Game Bot written in PHP by @TeamBallo
