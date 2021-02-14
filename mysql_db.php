@@ -14,10 +14,10 @@
 class mysql_db {
     
   // mysql server configuration
-  private $dbhost = 'db4free.net';
-  private $dbuser = 'teambot';
-  private $dbpass = 'teambotteambot';
-  private $dbname = 'teambot';
+  private $dbhost = 'localhost';
+  private $dbuser = 'simonetenisci';
+  private $dbpass = '';
+  private $dbname = 'my_simonetenisci';
   protected $mysql;
 
   public function getMysql() {
