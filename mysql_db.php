@@ -14,7 +14,7 @@
 class mysql_db {
     
   // mysql server configuration
-  private $dbhost = 'https://www.simonetenisci.altervista.org';
+  private $dbhost = 'https://s507.altervista.org/';
   private $dbuser = 'simonetenisci';
   private $dbpass = '';
   private $dbname = 'my_simonetenisci';
