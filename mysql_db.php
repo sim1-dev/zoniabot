@@ -15,9 +15,9 @@ class mysql_db {
     
   // mysql server configuration
   private $dbhost = 'https://s507.altervista.org/';
-  private $dbuser = 'simonetenisci';
-  private $dbpass = '';
-  private $dbname = 'my_simonetenisci';
+  private $dbuser = 'b8b719d6f89b5e';
+  private $dbpass = '35fa6e7c';
+  private $dbname = 'db';
   protected $mysql;
 
   public function getMysql() {
