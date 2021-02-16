@@ -14,10 +14,10 @@
 class mysql_db {
     
   // mysql server configuration
-  private $dbhost = 'esilxl0nthgloe1y.chr7pe7iynqr.eu-west-1.rds.amazonaws.com';
-  private $dbuser = 'socr05n4qxffqonc';
-  private $dbpass = 'x84j2ko8nhprd5fc';
-  private $dbname = 'wgcwwbmpo4l3h104';
+  private $dbhost = 'sql11.freemysqlhosting.net';
+  private $dbuser = 'sql11393343';
+  private $dbpass = 'jgvc6divlG';
+  private $dbname = 'sql11393343';
   protected $mysql;
 
   public function getMysql() {
